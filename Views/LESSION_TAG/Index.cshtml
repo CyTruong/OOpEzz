@@ -1,0 +1,40 @@
+﻿@model IEnumerable<OE.Models.LESSION_TAG>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LESSON_FK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TAG_FK)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LESSON_FK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TAG_FK)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PK_SEQ }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PK_SEQ }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PK_SEQ })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,59 @@
+﻿@model OE.Models.KEYWORD
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KEYWORD</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VI)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VI)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RELATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RELATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ORDER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ORDER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PK_SEQ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

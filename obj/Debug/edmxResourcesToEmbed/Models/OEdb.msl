@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OOPEZZ_DBModelStoreContainer" CdmEntityContainer="OOPEZZ_DBEntities">
+    <EntitySetMapping Name="CONTENT">
+      <EntityTypeMapping TypeName="OOPEZZ_DBModel.CONTENT">
+        <MappingFragment StoreEntitySet="CONTENT">
+          <ScalarProperty Name="GROUP_CONTENT_FK" ColumnName="GROUP_CONTENT_FK" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="CONTENT_TEXT" ColumnName="CONTENT_TEXT" />
+          <ScalarProperty Name="STT" ColumnName="STT" />
+          <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GROUP_CONTENT">
+      <EntityTypeMapping TypeName="OOPEZZ_DBModel.GROUP_CONTENT">
+        <MappingFragment StoreEntitySet="GROUP_CONTENT">
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="LESSION_FK" ColumnName="LESSION_FK" />
+          <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LESSION">
+      <EntityTypeMapping TypeName="OOPEZZ_DBModel.LESSION">
+        <MappingFragment StoreEntitySet="LESSION">
+          <ScalarProperty Name="MENU" ColumnName="MENU" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LESSION_TAG">
+      <EntityTypeMapping TypeName="OOPEZZ_DBModel.LESSION_TAG">
+        <MappingFragment StoreEntitySet="LESSION_TAG">
+          <ScalarProperty Name="TAG_FK" ColumnName="TAG_FK" />
+          <ScalarProperty Name="LESSON_FK" ColumnName="LESSON_FK" />
+          <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROCESS">
+      <EntityTypeMapping TypeName="OOPEZZ_DBModel.PROCESS">
+        <MappingFragment StoreEntitySet="PROCESS">
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="LESSION_FK" ColumnName="LESSION_FK" />
+          <ScalarProperty Name="USER_FK" ColumnName="USER_FK" />
+          <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TAG">
+      <EntityTypeMapping TypeName="OOPEZZ_DBModel.TAG">
+        <MappingFragment StoreEntitySet="TAG">
+          <ScalarProperty Name="TAG_NAME" ColumnName="TAG_NAME" />
+          <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER">
+      <EntityTypeMapping TypeName="OOPEZZ_DBModel.USER">
+        <MappingFragment StoreEntitySet="USER">
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="TOKEN" ColumnName="TOKEN" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QUESTION">
+      <EntityTypeMapping TypeName="OOPEZZ_DBModel.QUESTION">
+        <MappingFragment StoreEntitySet="QUESTION">
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="BEST_ANSWER_FK" ColumnName="BEST_ANSWER_FK" />
+          <ScalarProperty Name="QUESTION_USER_FK" ColumnName="QUESTION_USER_FK" />
+          <ScalarProperty Name="QUESTION_TEXT" ColumnName="QUESTION_TEXT" />
+          <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ANSWER">
+      <EntityTypeMapping TypeName="OOPEZZ_DBModel.ANSWER">
+        <MappingFragment StoreEntitySet="ANSWER">
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="QUESTION_FK" ColumnName="QUESTION_FK" />
+          <ScalarProperty Name="ANSWER_USER_FK" ColumnName="ANSWER_USER_FK" />
+          <ScalarProperty Name="ANSWER_TEXT" ColumnName="ANSWER_TEXT" />
+          <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KEYWORD">
+      <EntityTypeMapping TypeName="OOPEZZ_DBModel.KEYWORD">
+        <MappingFragment StoreEntitySet="KEYWORD">
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="ORDER" ColumnName="ORDER" />
+          <ScalarProperty Name="RELATE" ColumnName="RELATE" />
+          <ScalarProperty Name="VI" ColumnName="VI" />
+          <ScalarProperty Name="EN" ColumnName="EN" />
+          <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

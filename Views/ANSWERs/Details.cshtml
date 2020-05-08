@@ -1,0 +1,51 @@
+﻿@model OE.Models.ANSWER
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ANSWER</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ANSWER_TEXT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANSWER_TEXT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANSWER_USER_FK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANSWER_USER_FK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QUESTION_FK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QUESTION_FK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STATUS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PK_SEQ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

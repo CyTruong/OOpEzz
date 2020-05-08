@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="23ac20189a76435f9db4956a8035a5d7" Name="Diagram1" ZoomLevel="80">
+        <EntityTypeShape EntityType="OOPEZZ_DBModel.ANSWER" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="OOPEZZ_DBModel.CONTENT" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="OOPEZZ_DBModel.GROUP_CONTENT" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="OOPEZZ_DBModel.LESSION" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="OOPEZZ_DBModel.LESSION_TAG" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="OOPEZZ_DBModel.PROCESS" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="OOPEZZ_DBModel.QUESTION" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="OOPEZZ_DBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="OOPEZZ_DBModel.TAG" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="OOPEZZ_DBModel.USER" Width="1.5" PointX="6.75" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

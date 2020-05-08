@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OOPEZZ_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ANSWER">
+    <Key>
+      <PropertyRef Name="PK_SEQ" />
+    </Key>
+    <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ANSWER_TEXT" Type="nvarchar(max)" />
+    <Property Name="ANSWER_USER_FK" Type="int" />
+    <Property Name="QUESTION_FK" Type="int" />
+    <Property Name="STATUS" Type="int" />
+  </EntityType>
+  <EntityType Name="CONTENT">
+    <Key>
+      <PropertyRef Name="PK_SEQ" />
+    </Key>
+    <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STT" Type="int" />
+    <Property Name="CONTENT_TEXT" Type="nvarchar(max)" />
+    <Property Name="TYPE" Type="int" />
+    <Property Name="GROUP_CONTENT_FK" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GROUP_CONTENT">
+    <Key>
+      <PropertyRef Name="PK_SEQ" />
+    </Key>
+    <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LESSION_FK" Type="int" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar(max)" />
+    <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="KEYWORD">
+    <Key>
+      <PropertyRef Name="PK_SEQ" />
+    </Key>
+    <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EN" Type="nvarchar(max)" />
+    <Property Name="VI" Type="nvarchar(max)" />
+    <Property Name="RELATE" Type="nvarchar(max)" />
+    <Property Name="ORDER" Type="int" />
+    <Property Name="STATUS" Type="int" />
+  </EntityType>
+  <EntityType Name="LESSION">
+    <Key>
+      <PropertyRef Name="PK_SEQ" />
+    </Key>
+    <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar(max)" />
+    <Property Name="IMAGE" Type="varchar(max)" />
+    <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+    <Property Name="MENU" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="LESSION_TAG">
+    <Key>
+      <PropertyRef Name="PK_SEQ" />
+    </Key>
+    <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LESSON_FK" Type="int" Nullable="false" />
+    <Property Name="TAG_FK" Type="int" />
+  </EntityType>
+  <EntityType Name="PROCESS">
+    <Key>
+      <PropertyRef Name="PK_SEQ" />
+    </Key>
+    <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USER_FK" Type="int" Nullable="false" />
+    <Property Name="LESSION_FK" Type="int" Nullable="false" />
+    <Property Name="STATUS" Type="int" />
+  </EntityType>
+  <EntityType Name="QUESTION">
+    <Key>
+      <PropertyRef Name="PK_SEQ" />
+    </Key>
+    <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="QUESTION_TEXT" Type="nvarchar(max)" />
+    <Property Name="QUESTION_USER_FK" Type="int" Nullable="false" />
+    <Property Name="BEST_ANSWER_FK" Type="int" Nullable="false" />
+    <Property Name="STATUS" Type="int" />
+  </EntityType>
+  <EntityType Name="TAG">
+    <Key>
+      <PropertyRef Name="PK_SEQ" />
+    </Key>
+    <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TAG_NAME" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="PK_SEQ" />
+    </Key>
+    <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERNAME" Type="nvarchar(max)" />
+    <Property Name="TOKEN" Type="varchar(max)" />
+    <Property Name="STATUS" Type="int" />
+  </EntityType>
+  <EntityContainer Name="OOPEZZ_DBModelStoreContainer">
+    <EntitySet Name="ANSWER" EntityType="Self.ANSWER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CONTENT" EntityType="Self.CONTENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GROUP_CONTENT" EntityType="Self.GROUP_CONTENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KEYWORD" EntityType="Self.KEYWORD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LESSION" EntityType="Self.LESSION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LESSION_TAG" EntityType="Self.LESSION_TAG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROCESS" EntityType="Self.PROCESS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QUESTION" EntityType="Self.QUESTION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TAG" EntityType="Self.TAG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

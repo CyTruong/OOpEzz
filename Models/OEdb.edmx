@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="OOPEZZ_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ANSWER">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ANSWER_TEXT" Type="nvarchar(max)" />
+          <Property Name="ANSWER_USER_FK" Type="int" />
+          <Property Name="QUESTION_FK" Type="int" />
+          <Property Name="STATUS" Type="int" />
+        </EntityType>
+        <EntityType Name="CONTENT">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STT" Type="int" />
+          <Property Name="CONTENT_TEXT" Type="nvarchar(max)" />
+          <Property Name="TYPE" Type="int" />
+          <Property Name="GROUP_CONTENT_FK" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GROUP_CONTENT">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LESSION_FK" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar(max)" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="KEYWORD">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EN" Type="nvarchar(max)" />
+          <Property Name="VI" Type="nvarchar(max)" />
+          <Property Name="RELATE" Type="nvarchar(max)" />
+          <Property Name="ORDER" Type="int" />
+          <Property Name="STATUS" Type="int" />
+        </EntityType>
+        <EntityType Name="LESSION">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar(max)" />
+          <Property Name="IMAGE" Type="varchar(max)" />
+          <Property Name="DESCRIPTION" Type="nvarchar(max)" />
+          <Property Name="MENU" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="LESSION_TAG">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LESSON_FK" Type="int" Nullable="false" />
+          <Property Name="TAG_FK" Type="int" />
+        </EntityType>
+        <EntityType Name="PROCESS">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USER_FK" Type="int" Nullable="false" />
+          <Property Name="LESSION_FK" Type="int" Nullable="false" />
+          <Property Name="STATUS" Type="int" />
+        </EntityType>
+        <EntityType Name="QUESTION">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QUESTION_TEXT" Type="nvarchar(max)" />
+          <Property Name="QUESTION_USER_FK" Type="int" Nullable="false" />
+          <Property Name="BEST_ANSWER_FK" Type="int" Nullable="false" />
+          <Property Name="STATUS" Type="int" />
+        </EntityType>
+        <EntityType Name="TAG">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TAG_NAME" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERNAME" Type="nvarchar(max)" />
+          <Property Name="TOKEN" Type="varchar(max)" />
+          <Property Name="STATUS" Type="int" />
+        </EntityType>
+        <EntityContainer Name="OOPEZZ_DBModelStoreContainer">
+          <EntitySet Name="ANSWER" EntityType="Self.ANSWER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CONTENT" EntityType="Self.CONTENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GROUP_CONTENT" EntityType="Self.GROUP_CONTENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KEYWORD" EntityType="Self.KEYWORD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LESSION" EntityType="Self.LESSION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LESSION_TAG" EntityType="Self.LESSION_TAG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROCESS" EntityType="Self.PROCESS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QUESTION" EntityType="Self.QUESTION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TAG" EntityType="Self.TAG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OOPEZZ_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="OOPEZZ_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CONTENT" EntityType="OOPEZZ_DBModel.CONTENT" />
+          <EntitySet Name="GROUP_CONTENT" EntityType="OOPEZZ_DBModel.GROUP_CONTENT" />
+          <EntitySet Name="LESSION" EntityType="OOPEZZ_DBModel.LESSION" />
+          <EntitySet Name="LESSION_TAG" EntityType="OOPEZZ_DBModel.LESSION_TAG" />
+          <EntitySet Name="PROCESS" EntityType="OOPEZZ_DBModel.PROCESS" />
+          <EntitySet Name="TAG" EntityType="OOPEZZ_DBModel.TAG" />
+          <EntitySet Name="USER" EntityType="OOPEZZ_DBModel.USER" />
+          <EntitySet Name="QUESTION" EntityType="OOPEZZ_DBModel.QUESTION" />
+          <EntitySet Name="ANSWER" EntityType="OOPEZZ_DBModel.ANSWER" />
+          <EntitySet Name="KEYWORD" EntityType="OOPEZZ_DBModel.KEYWORD" />
+        </EntityContainer>
+        <EntityType Name="CONTENT">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STT" Type="Int32" />
+          <Property Name="CONTENT_TEXT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TYPE" Type="Int32" />
+          <Property Name="GROUP_CONTENT_FK" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GROUP_CONTENT">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LESSION_FK" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LESSION">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MENU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LESSION_TAG">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LESSON_FK" Type="Int32" Nullable="false" />
+          <Property Name="TAG_FK" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PROCESS">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USER_FK" Type="Int32" Nullable="false" />
+          <Property Name="LESSION_FK" Type="Int32" Nullable="false" />
+          <Property Name="STATUS" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TAG">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TAG_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERNAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TOKEN" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="STATUS" Type="Int32" />
+        </EntityType>
+        <EntityType Name="QUESTION">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QUESTION_TEXT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="QUESTION_USER_FK" Type="Int32" Nullable="false" />
+          <Property Name="BEST_ANSWER_FK" Type="Int32" Nullable="false" />
+          <Property Name="STATUS" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ANSWER">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ANSWER_TEXT" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ANSWER_USER_FK" Type="Int32" />
+          <Property Name="QUESTION_FK" Type="Int32" />
+          <Property Name="STATUS" Type="Int32" />
+        </EntityType>
+        <EntityType Name="KEYWORD">
+          <Key>
+            <PropertyRef Name="PK_SEQ" />
+          </Key>
+          <Property Name="PK_SEQ" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RELATE" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ORDER" Type="Int32" />
+          <Property Name="STATUS" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OOPEZZ_DBModelStoreContainer" CdmEntityContainer="OOPEZZ_DBEntities">
+          <EntitySetMapping Name="CONTENT">
+            <EntityTypeMapping TypeName="OOPEZZ_DBModel.CONTENT">
+              <MappingFragment StoreEntitySet="CONTENT">
+                <ScalarProperty Name="GROUP_CONTENT_FK" ColumnName="GROUP_CONTENT_FK" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="CONTENT_TEXT" ColumnName="CONTENT_TEXT" />
+                <ScalarProperty Name="STT" ColumnName="STT" />
+                <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GROUP_CONTENT">
+            <EntityTypeMapping TypeName="OOPEZZ_DBModel.GROUP_CONTENT">
+              <MappingFragment StoreEntitySet="GROUP_CONTENT">
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="LESSION_FK" ColumnName="LESSION_FK" />
+                <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LESSION">
+            <EntityTypeMapping TypeName="OOPEZZ_DBModel.LESSION">
+              <MappingFragment StoreEntitySet="LESSION">
+                <ScalarProperty Name="MENU" ColumnName="MENU" />
+                <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+                <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LESSION_TAG">
+            <EntityTypeMapping TypeName="OOPEZZ_DBModel.LESSION_TAG">
+              <MappingFragment StoreEntitySet="LESSION_TAG">
+                <ScalarProperty Name="TAG_FK" ColumnName="TAG_FK" />
+                <ScalarProperty Name="LESSON_FK" ColumnName="LESSON_FK" />
+                <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PROCESS">
+            <EntityTypeMapping TypeName="OOPEZZ_DBModel.PROCESS">
+              <MappingFragment StoreEntitySet="PROCESS">
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="LESSION_FK" ColumnName="LESSION_FK" />
+                <ScalarProperty Name="USER_FK" ColumnName="USER_FK" />
+                <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAG">
+            <EntityTypeMapping TypeName="OOPEZZ_DBModel.TAG">
+              <MappingFragment StoreEntitySet="TAG">
+                <ScalarProperty Name="TAG_NAME" ColumnName="TAG_NAME" />
+                <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER">
+            <EntityTypeMapping TypeName="OOPEZZ_DBModel.USER">
+              <MappingFragment StoreEntitySet="USER">
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="TOKEN" ColumnName="TOKEN" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QUESTION">
+            <EntityTypeMapping TypeName="OOPEZZ_DBModel.QUESTION">
+              <MappingFragment StoreEntitySet="QUESTION">
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="BEST_ANSWER_FK" ColumnName="BEST_ANSWER_FK" />
+                <ScalarProperty Name="QUESTION_USER_FK" ColumnName="QUESTION_USER_FK" />
+                <ScalarProperty Name="QUESTION_TEXT" ColumnName="QUESTION_TEXT" />
+                <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ANSWER">
+            <EntityTypeMapping TypeName="OOPEZZ_DBModel.ANSWER">
+              <MappingFragment StoreEntitySet="ANSWER">
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="QUESTION_FK" ColumnName="QUESTION_FK" />
+                <ScalarProperty Name="ANSWER_USER_FK" ColumnName="ANSWER_USER_FK" />
+                <ScalarProperty Name="ANSWER_TEXT" ColumnName="ANSWER_TEXT" />
+                <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KEYWORD">
+            <EntityTypeMapping TypeName="OOPEZZ_DBModel.KEYWORD">
+              <MappingFragment StoreEntitySet="KEYWORD">
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="ORDER" ColumnName="ORDER" />
+                <ScalarProperty Name="RELATE" ColumnName="RELATE" />
+                <ScalarProperty Name="VI" ColumnName="VI" />
+                <ScalarProperty Name="EN" ColumnName="EN" />
+                <ScalarProperty Name="PK_SEQ" ColumnName="PK_SEQ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

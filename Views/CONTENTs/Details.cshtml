@@ -1,0 +1,51 @@
+﻿@model OE.Models.CONTENT
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CONTENT</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.STT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONTENT_TEXT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONTENT_TEXT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TYPE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TYPE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GROUP_CONTENT_FK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GROUP_CONTENT_FK)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PK_SEQ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

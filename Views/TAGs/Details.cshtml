@@ -1,0 +1,27 @@
+﻿@model OE.Models.TAG
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TAG</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TAG_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TAG_NAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PK_SEQ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
