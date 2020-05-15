@@ -143,7 +143,8 @@ namespace OE.Controllers.api
             }
             else
             {
-                if (lvtDistance < input.Count /3)
+                float  minDis =(float) input.Count / 3;
+                if (lvtDistance < Math.Ceiling(minDis))
                 {
                     return true;
                 }
@@ -205,6 +206,17 @@ namespace OE.Controllers.api
             _post(json);
             json = fbTemplate.SimpleTextTemplate(botMessage.sender.id, "Để xem tiến độ học tập chat [process] (upcomming)");
             _post(json);
+            json = fbTemplate.ButtonTemplate(botMessage.sender.id, "Xem bài đầu tiên", new List<ResponseButtons>
+            {
+                new ResponseButtons
+                {
+                    payload="LESSON_1",
+                    type="postback",
+                    title = "Xem bài 1"
+                }
+            });
+            _post(json);
+
         }
 
         private void _lessonmenu2(OOPEZZ_DBEntities db, BotMessageReceivedRequest botMessage)
