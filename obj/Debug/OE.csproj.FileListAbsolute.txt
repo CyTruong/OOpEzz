@@ -78,3 +78,5 @@ E:\OopEzz\OopEzz\OE\obj\Debug\OE.csproj.CoreCompileInputs.cache
 E:\OopEzz\OopEzz\OE\obj\Debug\OE.csproj.CopyComplete
 E:\OopEzz\OopEzz\OE\obj\Debug\OE.dll
 E:\OopEzz\OopEzz\OE\obj\Debug\OE.pdb
+E:\OopEzz\OopEzz\OE\bin\System.Net.Http.Formatting.dll
+E:\OopEzz\OopEzz\OE\bin\System.Net.Http.Formatting.xml

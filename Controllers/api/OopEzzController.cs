@@ -27,7 +27,7 @@ namespace OE.Controllers.api
         {
             var query = Request.QueryString;
             if (query["hub.mode"] == "subscribe" &&
-            query["hub.verify_token"] == "cylasionNhattruong6")
+            query["hub.verify_token"] == AppInstance.getInstance().getFbverify_token())
             {
                 //string type = Request.QueryString["type"];
                 var retVal = query["hub.challenge"];
@@ -37,7 +37,6 @@ namespace OE.Controllers.api
             {
                 return HttpNotFound();
             }
-            return HttpNotFound();
         }
 
         [ActionName("Receive")]
@@ -50,10 +49,9 @@ namespace OE.Controllers.api
                 {
                     foreach (var message in entry.messaging)
                     {
-                        if (message.recipient.id.Equals("108722340761918"))
+                        if (message.recipient.id.Equals(AppInstance.getInstance().getFbPageId()))
                         {
                             ProgressRequest(message);
-
                         }
 
                     }
@@ -62,6 +60,5 @@ namespace OE.Controllers.api
 
             return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
-
     }
 }
